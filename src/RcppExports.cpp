@@ -5,6 +5,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // rcpp_calculate_bbox
 SEXP rcpp_calculate_bbox(SEXP x, SEXP geometry_cols);
 RcppExport SEXP _geometries_rcpp_calculate_bbox(SEXP xSEXP, SEXP geometry_colsSEXP) {
@@ -104,6 +109,29 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rcpp_unlist_list
+SEXP rcpp_unlist_list(Rcpp::List lst);
+RcppExport SEXP _geometries_rcpp_unlist_list(SEXP lstSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type lst(lstSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_unlist_list(lst));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_nest
+SEXP rcpp_nest(SEXP x, int depth);
+RcppExport SEXP _geometries_rcpp_nest(SEXP xSEXP, SEXP depthSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type depth(depthSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_nest(x, depth));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_rleid
 Rcpp::IntegerVector rcpp_rleid(Rcpp::DataFrame df, Rcpp::IntegerVector ids);
 RcppExport SEXP _geometries_rcpp_rleid(SEXP dfSEXP, SEXP idsSEXP) {
@@ -124,18 +152,6 @@ BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(rcpp_rleid_indices(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpp_nest
-SEXP rcpp_nest(SEXP x, int depth);
-RcppExport SEXP _geometries_rcpp_nest(SEXP xSEXP, SEXP depthSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
-    Rcpp::traits::input_parameter< int >::type depth(depthSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_nest(x, depth));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -409,6 +425,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rcpp_list_sizes
+SEXP rcpp_list_sizes(Rcpp::List lst);
+RcppExport SEXP _geometries_rcpp_list_sizes(SEXP lstSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type lst(lstSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_list_sizes(lst));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_geometries_rcpp_calculate_bbox", (DL_FUNC) &_geometries_rcpp_calculate_bbox, 2},
@@ -419,9 +446,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"_geometries_rcpp_coordinates", (DL_FUNC) &_geometries_rcpp_coordinates, 1},
     {"_geometries_rcpp_make_geometries", (DL_FUNC) &_geometries_rcpp_make_geometries, 6},
     {"_geometries_rcpp_id_positions", (DL_FUNC) &_geometries_rcpp_id_positions, 2},
+    {"_geometries_rcpp_unlist_list", (DL_FUNC) &_geometries_rcpp_unlist_list, 1},
+    {"_geometries_rcpp_nest", (DL_FUNC) &_geometries_rcpp_nest, 2},
     {"_geometries_rcpp_rleid", (DL_FUNC) &_geometries_rcpp_rleid, 2},
     {"_geometries_rcpp_rleid_indices", (DL_FUNC) &_geometries_rcpp_rleid_indices, 1},
-    {"_geometries_rcpp_nest", (DL_FUNC) &_geometries_rcpp_nest, 2},
     {"_geometries_test_attributes", (DL_FUNC) &_geometries_test_attributes, 2},
     {"_geometries_test_to_geometry_matrix_cols", (DL_FUNC) &_geometries_test_to_geometry_matrix_cols, 2},
     {"_geometries_test_to_geometry_matrix_cols_names", (DL_FUNC) &_geometries_test_to_geometry_matrix_cols_names, 3},
@@ -445,6 +473,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_geometries_rcpp_concatenate_vectors", (DL_FUNC) &_geometries_rcpp_concatenate_vectors, 2},
     {"_geometries_rcpp_where_is", (DL_FUNC) &_geometries_rcpp_where_is, 2},
     {"_geometries_rcpp_get_ids", (DL_FUNC) &_geometries_rcpp_get_ids, 2},
+    {"_geometries_rcpp_list_sizes", (DL_FUNC) &_geometries_rcpp_list_sizes, 1},
     {NULL, NULL, 0}
 };
 

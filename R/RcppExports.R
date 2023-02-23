@@ -33,16 +33,20 @@ rcpp_id_positions <- function(x, i) {
     .Call(`_geometries_rcpp_id_positions`, x, i)
 }
 
+rcpp_unlist_list <- function(lst) {
+    .Call(`_geometries_rcpp_unlist_list`, lst)
+}
+
+rcpp_nest <- function(x, depth) {
+    .Call(`_geometries_rcpp_nest`, x, depth)
+}
+
 rcpp_rleid <- function(df, ids) {
     .Call(`_geometries_rcpp_rleid`, df, ids)
 }
 
 rcpp_rleid_indices <- function(x) {
     .Call(`_geometries_rcpp_rleid_indices`, x)
-}
-
-rcpp_nest <- function(x, depth) {
-    .Call(`_geometries_rcpp_nest`, x, depth)
 }
 
 .test_attributes <- function(obj, attributes) {
@@ -135,5 +139,9 @@ rcpp_where_is <- function(to_find, sv) {
 
 rcpp_get_ids <- function(x, id_col) {
     .Call(`_geometries_rcpp_get_ids`, x, id_col)
+}
+
+rcpp_list_sizes <- function(lst) {
+    .Call(`_geometries_rcpp_list_sizes`, lst)
 }
 
