@@ -1,4 +1,4 @@
-e11eeed95a85e9c05633bc944ecb2d2e *DESCRIPTION
+15f193f6495e960293570c29019ff90b *DESCRIPTION
 f5756d57eaab2e3d1bfd7c9dc67f8534 *LICENSE
 eb13078e7db8aca85c3b5cc146a5d84b *NAMESPACE
 2e043518c04d97d7348dd59b0c927a76 *NEWS.md
@@ -7,15 +7,15 @@ a08e062b6a05e94a556bcf4e2ed20cac *R/RcppExports.R
 0b100a601e593e249f8bdce71b730e41 *R/geometries.R
 938de7689285d391f3cea026d9874d92 *R/geometrires-package.R
 be0c1a48cc5e489670ce98d06bc01816 *README.md
-c4b3b03965bf9cbb34de8c2fa2a279e7 *build/vignette.rds
+140fb9159bc1e4d6d5c16789d6d79efe *build/vignette.rds
 a311c24a4ec4ca88d5ee64b18592695c *inst/doc/geometries.R
 fa06f8853aaf8477ab0c1cc02065ff5e *inst/doc/geometries.Rmd
-756e7b5518493ae8ecb793ae24d4dff4 *inst/doc/geometries.html
+28104b890c58141ebf0c667c90721a89 *inst/doc/geometries.html
 7ce0ca7fcf5bc457800badce6bd2b6cb *inst/include/geometries/bbox/bbox.hpp
 9d55c441fa71fd8ec7d8bcb407d78369 *inst/include/geometries/coordinates/coordinates.hpp
 272e050dcb2e27679997230b724429e6 *inst/include/geometries/coordinates/coordinates_impl.hpp
 a01d0e2f824788c17c0e113b73532621 *inst/include/geometries/coordinates/dimensions.hpp
-9458c997aecc596eba84e0a1aab280fd *inst/include/geometries/geometries.hpp
+617164f2d38c5ec39c29f055f43bcb43 *inst/include/geometries/geometries.hpp
 bcaffedc40dbb945528f169f2ebaeefe *inst/include/geometries/matrix/mat_to_df.hpp
 0fdab9afc7e8fa731ad0ecc3a59ac66d *inst/include/geometries/matrix/to_mat.hpp
 d0990fa03d5bd0e95f1540f83d4aa7ad *inst/include/geometries/nest/nest.hpp
