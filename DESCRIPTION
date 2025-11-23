@@ -1,8 +1,8 @@
 Package: geometries
 Type: Package
 Title: Convert Between R Objects and Geometric Structures
-Date: 2024-01-16
-Version: 0.2.4
+Date: 2025-11-23
+Version: 0.2.5
 Authors@R: c(
     person("David", "Cooley", ,"david.cooley.au@gmail.com", role = c("aut", "cre"))
     )
@@ -15,12 +15,12 @@ BugReports: https://github.com/dcooley/geometries/issues
 Encoding: UTF-8
 RoxygenNote: 7.2.3
 LinkingTo: Rcpp
-Imports: Rcpp (>= 1.0.10)
+Imports: Rcpp (>= 1.1.0)
 Suggests: covr, knitr, rmarkdown, tinytest
 VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2024-01-15 21:13:39 UTC; david
+Packaged: 2025-11-23 16:09:52 UTC; david
 Author: David Cooley [aut, cre]
 Maintainer: David Cooley <david.cooley.au@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-01-15 21:50:02 UTC
+Date/Publication: 2025-11-23 16:30:02 UTC
